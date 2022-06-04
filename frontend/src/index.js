@@ -1,13 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import FrontPage from './pages/frontPage.jsx';
+import SnackBar from './components/snackBar.jsx';
 import reportWebVitals from './reportWebVitals';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+// import your route components
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <SnackBar/>
+      <Routes>
+        <Route path="/" element={<FrontPage />}></Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
